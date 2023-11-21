@@ -1,9 +1,23 @@
 import './App.css';
 
 
-import React from "react";
-import Portfolio from "./components/Portfolio";
+import { Outlet } from 'react-router-dom';
+import Header from '../src/components/Header';
+import Footer from '../src/components/Footer';
 
-const App = () => <Portfolio />;
+function App() {
+  return (
+    <>
+      <Header />
+      
+      <main className="mx-3">
+        <Outlet />
+      </main>
+      
+      <Footer />
+
+    </>
+  );
+}
 
 export default App;
