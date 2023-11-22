@@ -26,6 +26,7 @@ function Form() {
   const [Name, setName] = useState("");
   const [message, setMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
+  const [valerr, setValErr] = useState("");
 
   const handleInputChange = (e) => {
     const { target } = e;
@@ -40,6 +41,20 @@ function Form() {
       setMessage(inputValue);
     }
   };
+
+  const handleBlur = (event) => {
+    console.log("handleBlue called event:" + event)
+ 
+    const { name, value } = event.target;
+    if (!value)  {
+
+      setSuccessMessage(`***** ${name} is required ****`)
+    } else {
+      setSuccessMessage("")
+    }
+    return;
+
+};
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
@@ -66,7 +81,9 @@ function Form() {
 
     setName("");
     setMessage("");
-    setEmail(""); 
+    setEmail("");
+    setValErr("") 
+    
   };
 
   return (
@@ -81,20 +98,26 @@ function Form() {
             value={email}
             name="email"
             onChange={handleInputChange}
+            onBlur={handleBlur}
+
             type="email"
             placeholder="email"
             required
           />
+          <p> {valerr}</p>
         </div>
         <div style={styles.input}>
           <input
             value={Name}
             name="Name"
             onChange={handleInputChange}
+            onBlur={handleBlur}
+           
             type="text"
             placeholder="name"
             required
           />
+          <p> {valerr}</p>
         </div>
         <div style={styles.input}>
           <input
@@ -102,10 +125,12 @@ function Form() {
             value={message}
             name="message"
             onChange={handleInputChange}
+            onBlur={handleBlur}
             type="message"
             placeholder="message"
             required
           />
+          <p> {valerr}</p>
         </div>
         <div>
           <button type="button" onClick={handleFormSubmit}>

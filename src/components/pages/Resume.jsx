@@ -13,6 +13,7 @@ const styles = {
     paddingRight: "0.5rem",
   },
   h3: {
+    textAlign: "center",
     paddingTop: "0.75rem",
   },
 };
@@ -27,8 +28,9 @@ export default function Resume() {
         </a>
       </p>
       <h3 style={styles.h3}>Technical Skills</h3>
-      <p>
-        <h4>Front-End</h4>
+      <h4>Front-End</h4>
+      <>
+       
         <ul>
           <li>HTML</li>
           <li>CSS</li>
@@ -38,9 +40,8 @@ export default function Resume() {
           <li>React</li>
           <li>Responsive Design</li>
         </ul>
-      </p>
-      <p>
-        <h4>Back-End</h4>
+    
+      <h4>Back-End</h4>
         <ul>
           <li>MySQL</li>
           <li>Sequelize</li>
@@ -51,8 +52,7 @@ export default function Resume() {
           <li>APIs</li>
           <li>GraphQL</li>
         </ul>
-      </p>
-     
+      </> 
     </div>
   );
 }
