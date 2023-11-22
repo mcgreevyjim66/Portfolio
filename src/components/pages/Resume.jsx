@@ -1,14 +1,22 @@
+// Import React and the resume PDF
 import React from "react";
 import ResumeMcGreevy from "../../../assets/McGreevy, James Resume.pdf";
 
+// Define styles object for various elements
 const styles = {
+  // Styles for headings, links, and spacing
+  
   h2: {
     textAlign: "center",
+  },
+  ul: {
+    listStyleType: "none",
   },
   link: {
     color: "#0000FF",
   },
   space: {
+    textAlign: "center",
     paddingLeft: "0.5rem",
     paddingRight: "0.5rem",
   },
@@ -17,6 +25,9 @@ const styles = {
     paddingTop: "0.75rem",
   },
 };
+
+
+// Define the Resume component
 
 export default function Resume() {
   return (
@@ -27,11 +38,11 @@ export default function Resume() {
           Download Full Resume
         </a>
       </p>
-      <h3 style={styles.h3}>Technical Skills</h3>
-      <h4>Front-End</h4>
+         <h3>Technical Skills</h3>
+        <h4>Front-End</h4>
       <>
        
-        <ul>
+        <ul style={styles.ul}>
           <li>HTML</li>
           <li>CSS</li>
           <li>Javascript</li>
@@ -42,7 +53,7 @@ export default function Resume() {
         </ul>
     
       <h4>Back-End</h4>
-        <ul>
+        <ul style={styles.ul}>
           <li>MySQL</li>
           <li>Sequelize</li>
           <li>MongoDB</li>
@@ -52,7 +63,8 @@ export default function Resume() {
           <li>APIs</li>
           <li>GraphQL</li>
         </ul>
-      </> 
+      </>
+
     </div>
   );
 }

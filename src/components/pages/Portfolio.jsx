@@ -1,13 +1,18 @@
+// Import React and various image assets
 import React from "react";
 import WeatherDashboard from "../../../assets/img/weatherdashboard.png";
+// ... other image imports\
 import NoteTaker from "../../../assets/img/NoteTaker02.png";
 import SocialNetwork from "../../../assets/img/social_network.png";
 import TechBlog from "../../../assets/img/tech_blog.png";
 import TextEditor from "../../../assets/img/text_editor.png";
+import ChatStrology from "../../../assets/img/chatstrology.png";
 
 
+// Import styles for the component
 import "../../../src/style/portfolio.css";
 
+// Define styles object for various elements
 const styles = {
   h2: {
     textAlign: "center",
@@ -16,9 +21,6 @@ const styles = {
     paddingLeft: "0.5rem",
     paddingRight: "0.5rem",
   },
-  imageheight: {
-    minHeight: "200px"
-   },
   header: {
     textAlign: "center",
     paddingBottom: "0.15rem",
@@ -30,7 +32,10 @@ const styles = {
   },
 };
 
+// Define the Portfolio component
 export default function Portfolio() {
+  // Return the component JSX
+
   return (
     <div>
       <h2 style={styles.h2}>Portfolio</h2>
@@ -127,6 +132,31 @@ export default function Portfolio() {
 
         <div className="row justify-content-center">
           <section className="card col-sm-3 p-0 m-2">
+          <a style={styles.imageheight}
+              href="https://obscure-ridge-25340-4bc074fbbe48.herokuapp.com/"
+              target="blank"
+            >
+              <img
+                className="card-img-top"
+                src={ChatStrology}
+                alt="screenshot of ChatStrology website"
+              />
+              <header>
+                <h3 style={styles.header}>ChatStrology chatGPT Generative Chat</h3>
+              </header>
+            </a>
+            <a
+              style={styles.repo}
+              href="https://github.com/mcgreevyjim66/Chatstrology"
+              target="blank"
+            >
+              GitHub Repository
+            </a>
+            <p style={styles.space}>
+            Chatstrology is an application designed for users interested in learning more about astrology. 
+            It is powered through ChatGPT using the langchain OpenAI package and allows a user to make and store prompts for later viewing.
+            The application also makes use for MySQL and sequelize for database functions.
+            </p>
             
           </section>
 

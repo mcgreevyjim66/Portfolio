@@ -1,38 +1,43 @@
-import React, { useState } from "react";
+import React, { useState } from "react"; // Importing React and the useState hook from the React library.
 
-import { validateEmail } from "../utils/helpers";
+import { validateEmail } from "../utils/helpers"; // Importing a custom function to validate email addresses.
 
+// Defining CSS styles as a JavaScript object.
 const styles = {
   h2: {
-    textAlign: "center",
+    textAlign: "center", // Center-align text in <h2> elements.
   },
   form: {
-    textAlign: "center",
+    textAlign: "center", // Center-align text in form elements.
   },
   email: {
-    textAlign: "center",
-    color: "#0000FF",
+    textAlign: "center", // Center-align text in email elements.
+    color: "#0000FF", // Set text color to blue.
   },
   input: {
-    margin: "0.5rem",
+    margin: "0.5rem", // Set margin around input elements.
   },
   inputa: {
-    height: "4rem",
+    height: "4rem", // Set a specific height for some input elements.
   },
 };
 
+// Defining a functional component named 'Form'.
 function Form() {
-  const [email, setEmail] = useState("");
-  const [Name, setName] = useState("");
-  const [message, setMessage] = useState("");
-  const [successMessage, setSuccessMessage] = useState("");
-  const [valerr, setValErr] = useState("");
+  // State variables for the form.
+  const [email, setEmail] = useState(""); // State for the email input field.
+  const [Name, setName] = useState(""); // State for the name input field.
+  const [message, setMessage] = useState(""); // State for the message input field.
+  const [successMessage, setSuccessMessage] = useState(""); // State for displaying the success message.
+  const [valerr, setValErr] = useState(""); // State for validation error messages.
 
+  // Function to handle changes in input fields.
   const handleInputChange = (e) => {
-    const { target } = e;
-    const inputType = target.name;
-    const inputValue = target.value;
+    const { target } = e; // Destructuring to get the event target.
+    const inputType = target.name; // Identifying the input field's name.
+    const inputValue = target.value; // Getting the current value of the input field.
 
+    // Updating state based on the input field.
     if (inputType === "email") {
       setEmail(inputValue);
     } else if (inputType === "Name") {
@@ -42,50 +47,49 @@ function Form() {
     }
   };
 
+  // Function to handle onBlur event for form validation.
   const handleBlur = (event) => {
-    console.log("handleBlue called event:" + event)
- 
-    const { name, value } = event.target;
+    const { name, value } = event.target; // Destructuring to get name and value from the event target.
+    // Checking if the input field is empty and setting the appropriate message.
     if (!value)  {
-
       setSuccessMessage(`***** ${name} is required ****`)
     } else {
       setSuccessMessage("")
     }
-    return;
+  };
 
-};
-
+  // Function to handle form submission.
   const handleFormSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault(); // Preventing the default form submission behavior.
 
+    // Validating email, name, and message fields.
     if (!validateEmail(email)) {
       alert("Email is Invalid");
       return;
     }
-
     if (!Name) {
       alert("Name is Required");
       return;
     }
-
     if (!message) {
       alert("Message is Required");
       return;
     }
 
+    // Checking if any of the fields are filled and setting success message.
     if (email || Name || message) {
       setSuccessMessage("Form Submitted Successfully");
       return;
     }
 
+    // Resetting the form fields.
     setName("");
     setMessage("");
     setEmail("");
     setValErr("") 
-    
   };
 
+  // JSX for rendering the form component.
   return (
     <div>
       <h2 style={styles.h2}>Contact</h2>
@@ -148,3 +152,6 @@ function Form() {
 }
 
 export default Form;
+
+
+

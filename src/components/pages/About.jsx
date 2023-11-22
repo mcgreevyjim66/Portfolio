@@ -1,27 +1,31 @@
-import React from 'react';
-import JimAvatar from "../../../assets/img/jim_avatar.png";
 
+import React from 'react'; // Importing the React library from the 'react' package.
+
+import JimAvatar from "../../../assets/img/jim_avatar.png"; // Importing an image file for use as an avatar.
+
+// Defining a 'styles' object with nested style objects for various components.
 const styles = {
   avatar: {
-    display: 'block',
-    marginLeft: 'auto',
-    marginRight: 'auto',
-    maxHeight: '200px',
-    maxWidth: '200px',
-    borderRadius: '25%',
-    border: '3px solid #58C2C7',
-    filter: 'opacity(100%)',
-    cursor: 'default',
+    display: 'block', // Ensures the avatar image is displayed as a block-level element.
+    marginLeft: 'auto', // Centers the image horizontally by setting left margin to auto.
+    marginRight: 'auto', // Centers the image horizontally by setting right margin to auto.
+    maxHeight: '200px', // Sets the maximum height of the avatar image.
+    maxWidth: '200px', // Sets the maximum width of the avatar image.
+    borderRadius: '25%', // Rounds the corners of the avatar image.
+    border: '3px solid #58C2C7', // Adds a solid border with a specific color and thickness.
+    filter: 'opacity(100%)', // Sets the image opacity to fully opaque.
+    cursor: 'default', // Sets the cursor style to default when hovering over the image.
   },
   h2: {
-    textAlign: 'center',
+    textAlign: 'center', // Centers the text within the <h2> element.
   },
   space: {
-    paddingLeft: '0.5rem',
-    paddingRight: '0.5rem',
+    paddingLeft: '0.5rem', // Adds left padding to the container.
+    paddingRight: '0.5rem', // Adds right padding to the container.
   },
 };
 
+// Defining and exporting a React functional component named 'About'.
 export default function About() {
   return (
     <div style={styles.space}>
@@ -47,5 +51,8 @@ export default function About() {
     </div>
   );
 }
+
+
+
 
 
