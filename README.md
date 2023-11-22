@@ -55,7 +55,7 @@ There is source code located in the Portfolio folder.
 
 ## Mock-up
 
-![The Portfolio screen shot.](../Portfolio/assets/img/portfolio.png)
+![The Portfolio screen shot.](../assets/img/portfolio.png)
 
 ## Credits
 
